@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RentCars - Atualizar Veículo</title>
+</head>
+<body>
+    <h1>RentCars - Atualizar Veículo</h1>
+
+    <h2>Atualizar Veículo</h2>
+    <form id="update-vehicle-form" action="/Atualizar" method="put">
+        <label for="update-vehicle-id">ID de Veículos:</label>
+        <input type="text" id="update-vehicle-id" required>
+        <br>
+        <label for="update-locadora">Locadora:</label>
+        <input type="text" id="update-locadora" required>
+        <br>
+        <label for="update-modelo">Modelo:</label>
+        <input type="text" id="update-modelo" required>
+        <br>
+        <label for="update-marca">Marca:</label>
+        <input type="text" id="update-marca" required>
+        <br>
+        <label for="update-ano">Ano:</label>
+        <input type="text" id="update-ano" required>
+        <br>
+        <label for="update-motor">Motor:</label>
+        <input type="text" id="update-motor" required>
+        <br>
+        <label for="update-portas">Portas:</label>
+        <input type="text" id="update-portas" required>
+        <br>
+        <label for="update-cambio">Tipo de Câmbio:</label>
+        <input type="text" id="update-cambio" required>
+        <br>
+        <label for="update-ar_condicionado">Ar-Condicionado:</label>
+        <input type="checkbox" id="update-ar_condicionado" required>
+        <br>
+        <button type="button" id="salvarDados">Atualizar Veículo</button>
+    </form>
+
+
+    <a href="/">Voltar à página inicial</a>
+
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; 
+    background-image: url('https://png.pngtree.com/background/20211217/original/pngtree-black-and-yellow-sale-template-picture-image_1596547.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: "Impact", fantasy;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    color: #FFD700; 
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #FFD700; 
+}
+
+form {
+    text-align: left; 
+}
+
+label {
+    font-size: 18px;
+    margin: 10px 0;
+    display: block;
+    color: #FFD700;
+}
+
+input {
+    font-size: 18px;
+    padding: 10px;
+    border: 1px solid #ccc; 
+    width: 100%;
+    box-sizing: border-box;
+    margin: 5px 0;
+}
+
+button {
+    background-color: #FFD700; 
+    color: black; 
+    font-family: "Impact", fantasy;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #FFD700; 
+}
+
+a {
+    text-decoration: none; 
+    color: black;
+    font-weight: center;
+    font-size: 20px;
+}
+
+a:hover {
+    color: #ff6600; 
+}
+
+    </style>
+
+<script>
+ const form = document.getElementById('update-vehicle-form');
+const salvarButton = document.getElementById('salvarDados');
+
+salvarButton.addEventListener('click', () => {
+    const id = document.getElementById('update-vehicle-id').value;
+    const locadora = document.getElementById('update-locadora').value;
+    const modelo = document.getElementById('update-modelo').value;
+    const marca = document.getElementById('update-marca').value;
+    const ano = document.getElementById('update-ano').value;
+    const motor = document.getElementById('update-motor').value;
+    const numero_portas = document.getElementById('update-portas').value;
+    const tipo_cambio = document.getElementById('update-cambio').value;
+    const ar_condicionado = document.getElementById('update-ar_condicionado').checked;
+
+    const requestBody = {
+        locadora,
+        modelo,
+        marca,
+        ano,
+        motor,
+        numero_portas,
+        tipo_cambio,
+        ar_condicionado
+    };
+
+    fetch(`/Atualizar/${id}`, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(requestBody),
+    })
+    .then((response) => {
+        if (response.status === 200) {
+            alert('Veículo atualizado com sucesso');
+        } else if (response.status === 404) {
+            alert('Veículo não encontrado');
+        } else {
+            alert('Erro ao atualizar veículo');
+        }
+    })
+    .catch((error) => {
+        console.error(error);
+    });
+});
+</script>
+    
+
+
+</body>
+</html>

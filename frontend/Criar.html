@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RentCars - Registrar Veículo</title>
+</head>
+<body>
+    <h1>RentCars - Registrar Veículo</h1>
+
+    <h2>Adicionar Um Novo Veículo</h2>
+     <form id="add-vehicle-form" action="/Criar" method="post">
+        <label for="id">ID:</label>
+        <input type="text" id="id" name="id" required>
+         <label for="locadora">Locadora:</label>
+         <input type="text" id="locadora" name="locadora" required>
+         <br>
+         <label for="modelo">Modelo:</label>
+         <input type="text" id="modelo" name="modelo" required>
+         <br>
+         <label for="marca">Marca:</label>
+         <input type="text" id="marca" name="marca" required>
+         <br>
+         <label for="ano">Ano:</label>
+         <input type="text" id="ano" name="ano" required>
+         <br>
+         <label for="motor">Motor:</label>
+         <input type="text" id="motor" name="motor" required>
+         <br>
+         <label for="portas">Portas:</label>
+         <input type="text" id="numero_portas" name="numero_portas" required>
+         <br>
+         <label for="cambio">Tipo de Câmbio:</label>
+         <input type="text" id="tipo_cambio" name="tipo_cambio" required>
+         <br>
+         <label for="ar_condicionado">Ar-Condicionado:</label>
+         <input type="checkbox" id="ar_condicionado" name="ar_condicionado" required>
+         <br>
+         <button type="submit">Adicionar Veículo</button>
+     </form>
+
+    <a href="/">Voltar à página inicial</a>
+
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    background-image: url('https://png.pngtree.com/background/20211217/original/pngtree-black-and-yellow-sale-template-picture-image_1596547.jpg'); 
+    background-size: cover;
+    background-position: center;
+    font-family: "Impact", fantasy;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    color: #FFD700;
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #FFD700;
+}
+
+form {
+    text-align: left; 
+}
+
+label {
+    font-size: 18px;
+    margin: 10px 0;
+    display: block;
+    color: #FFD700;
+}
+
+input {
+    font-size: 18px;
+    padding: 10px;
+    border: 1px solid #ccc; 
+    width: 100%;
+    box-sizing: border-box;
+    margin: 5px 0;
+}
+
+button {
+    background-color: orange; 
+    color: black; 
+    font-family: "Impact", fantasy;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ff6600;
+}
+
+a {
+    text-decoration: none; 
+    color: black; 
+    font-weight: bold;
+    font-size: 20px;
+}
+
+a:hover {
+    color: #ff6600; 
+}
+    </style>
+
+   
+</body>
+</html>

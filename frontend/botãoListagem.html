@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>RentCars - Listagem de Veículos</title>
+</head>
+<body>
+    <h1>RentCars - Listagem de Veículos</h1>
+
+    <h2>Lista de Veiculos</h2>
+     <form id="add-vehicle-form" action="" method="get">
+     <label for ="lista-vehicle">Ver Listas de Carros:
+        <br>
+        <a href="/Listagem">CLIQUE AQUI</a>
+        <label for ="pesquisa-id">Caso queira procurar pelo ID: 
+        <input type="text" id="lista-pelo-id" required>
+        <a href="javascript:void(0);" onclick="procurarPorID();">Procurar</a>
+        </label>
+     </label>
+     <br>
+ </form>
+
+    <a href="/">Voltar à página inicial</a>
+
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    background-image: url('https://png.pngtree.com/background/20211217/original/pngtree-black-and-yellow-sale-template-picture-image_1596547.jpg'); 
+    background-size: cover;
+    background-position: center;
+    font-family: "Impact", fantasy;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    color: #FFD700; 
+    font-size: 36px;
+}
+h2 {
+    font-size: 24px;
+    color: #333; 
+}
+ul {
+    list-style: none; 
+    padding: 0;
+}
+
+li {
+    font-size: 18px;
+    margin: 10px 0;
+    text-align: left; 
+}
+
+a {
+    text-decoration: none;
+    color: #FFD700; 
+    font-weight: bold;
+    font-size: 20px;
+}
+
+label {
+    font-size: 18px;
+    margin: 10px 0;
+    display: block;
+    color: #FFD700;
+}
+
+button {
+    background-color: #FFD700; 
+    color: black; 
+    font-family: "Impact", fantasy;
+    font-size: 20px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 10px 0;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ff6600; 
+}
+
+a {
+    text-decoration: none; 
+    color: #FFD700; 
+    font-weight: bold;
+    font-size: 20px;
+}
+
+a:hover {
+    color: #ff6600; 
+}
+
+a:hover {
+    color: #ff6600;
+}
+    </style>
+
+<script>
+    function procurarPorID() {
+        const id = document.getElementById('lista-pelo-id').value;
+        if (id !== '') {
+            const url = '/Listagem' + id; 
+            window.location.href = '/Listagem' + id; 
+        } else {
+            alert('Por favor, insira um ID válido.');
+        }
+    }
+    </script>
+
+
+</body>
+</html>
