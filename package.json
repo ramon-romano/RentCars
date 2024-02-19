@@ -14,7 +14,7 @@
     "rest",
     "api"
   ],
-  "author": "Winicius Neves",
+  "author": "Ramon Romano",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.2",
